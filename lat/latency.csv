@@ -1,0 +1,5 @@
+,node0,node1,node2,node3
+node0,0,10,20,30
+node1,10,0,15,25
+node2,20,15,0,12
+node3,30,25,12,0
