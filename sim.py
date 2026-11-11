@@ -13,12 +13,31 @@ def rotativeLeader(network, _):
     network.leader += [next]
 
 
+# Contador global
+counter = 1      
+# Sequencias de lider 
+pior = [0, 7, 2, 8, 6, 10, 1, 9, 3, 12, 5, 4, 11]
+melhor = [0, 4, 10, 11, 8, 12, 9, 2, 6, 7, 3, 1, 5]
+padrao = [i for i in range(13)]
+# Opcao 
+rota = melhor
+# Funcao de lider 
+def ordem(network, _):
+    global counter
+    next = rota[counter]
+    counter += 1
+    if counter >= len(rota):
+        counter = 0
+    network.leader += [next]
+
+
+
 # Process latency matrix
 nodes, latency = read_latency_matrix('lat/latency.csv') 
 # Define how many blocks the simulations runs for 
 MAXBLOCK = 20
 # Select leader behavior function 
-leaderFunction = rotativeLeader
+leaderFunction = ordem
 
 
 # Start simulation 
