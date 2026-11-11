@@ -35,7 +35,7 @@ def ordem(network, _):
 # Process latency matrix
 nodes, latency = read_latency_matrix('lat/latency.csv') 
 # Define how many blocks the simulations runs for 
-MAXBLOCK = 20
+MAXBLOCK = len(nodes)+2
 # Select leader behavior function 
 leaderFunction = ordem
 
